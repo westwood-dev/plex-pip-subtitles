@@ -1,0 +1,8 @@
+/* The extension adds a standard subtitle track to Plex's <video> so that
+ * Firefox's Picture-in-Picture window can show it. Plex already draws its own
+ * subtitles on the page, so hide the copy Firefox would draw on the page.
+ * (The PiP window draws subtitles itself and is not affected by this.) */
+video::cue {
+  visibility: hidden;
+  background: transparent;
+}

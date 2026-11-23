@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PiP Subtitles for Plex</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <p>
+    Works automatically on <b>app.plex.tv</b> and Plex's own
+    <b>*.plex.direct</b> addresses.
+  </p>
+  <p>
+    If you open Plex at another address, such as your server's IP
+    (<code>http://192.168.1.10:32400/web</code>) or your own domain, add it
+    here. Firefox will ask you to allow access to that site only.
+  </p>
+
+  <form id="add-form">
+    <input id="server" type="text" required
+           placeholder="http://192.168.1.10:32400/web" aria-label="Plex server address">
+    <button type="submit">Add server</button>
+  </form>
+  <p id="message" role="status"></p>
+
+  <ul id="servers"></ul>
+
+  <script src="options.js"></script>
+</body>
+</html>

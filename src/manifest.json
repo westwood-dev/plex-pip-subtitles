@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "PiP Subtitles for Plex",
+  "version": "1.1.0",
+  "description": "Shows Plex web player subtitles in Firefox's Picture-in-Picture window.",
+  "author": "PiP Subtitles for Plex contributors",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "plex-pip-subtitles@local",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": ["storage"],
+  "optional_permissions": ["*://*/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.plex.tv/*", "https://*.plex.direct/*"],
+      "js": ["content.js"],
+      "css": ["page.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
